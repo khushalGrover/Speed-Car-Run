@@ -50,6 +50,7 @@ public class canvasManager : MonoBehaviour
     public void loadFirstScene()
     {       
         SceneManager.LoadScene(1);
+        Debug.Log("trying to load");
     }
     public void loadSecondScene()
     {       

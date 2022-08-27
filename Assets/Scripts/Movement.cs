@@ -16,22 +16,16 @@ public class Movement : MonoBehaviour
 
     public float touchPosX;
 
-  
-
-
-
     void Start()
     {
         isAlive = true;
        
     }
 
-
     void Update()
     {       
         if(isAlive)
         {
-            
             checkInput();
             inputPC();
             transform.localPosition = new Vector3(Mathf.Clamp(touchPosX, leftLimit, rightLimit), 0.17f, 0);
@@ -47,9 +41,7 @@ public class Movement : MonoBehaviour
        if(isTouching )
         {
             float movDir = Input.GetAxis("Mouse X");
-            
             touchPosX += movDir * controlSpeed *Time.fixedDeltaTime;
-
         }
     }
 
