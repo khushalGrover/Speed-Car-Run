@@ -31,7 +31,7 @@ public class canvasManager : MonoBehaviour
     private void Start() 
     {
         
-        //DeActivateAllCanvas();
+        // DeActivateAllCanvas();
         Time.timeScale = 1;
     }
 
@@ -98,7 +98,9 @@ public class canvasManager : MonoBehaviour
 
     public void option()
     {
-
+        DeActivateAllCanvas();
+        optionCanvas.SetActive(true);
+        Debug.Log("Option button press");
     }
 
     public void Restart()
