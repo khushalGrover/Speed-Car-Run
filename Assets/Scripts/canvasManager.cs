@@ -30,8 +30,11 @@ public class canvasManager : MonoBehaviour
 
     private void Start() 
     {
+        // if(SceneManager.GetActiveScene().buildIndex == 1)
+        // {
+        //     DeActivateAllCanvas();
+        // }
         
-        // DeActivateAllCanvas();
         Time.timeScale = 1;
     }
 
