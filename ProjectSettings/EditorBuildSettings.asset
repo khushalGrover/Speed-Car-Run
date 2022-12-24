@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Menu.unity
+    path: Assets/SpeedCarRun/Scenes/Menu.unity
     guid: a14ea01d1b5162783821bbed46c57ba0
   - enabled: 1
-    path: Assets/Scenes/DaySecne.unity
+    path: Assets/SpeedCarRun/Scenes/DaySecne.unity
     guid: a3a6079a1b4197d51bca316bcca50fa0
+  - enabled: 1
+    path: Assets/SpeedCarRun/Scenes/night Secne 1.unity
+    guid: 46608a08aacb63a4399bbb1e54f6f24f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: 8ccd8caf5b481ac0d8f8bb974ebd3aa1,
       type: 2}
