@@ -59,6 +59,11 @@ public class canvasManager : MonoBehaviour
     {       
         SceneManager.LoadScene(2);
     }
+    public void loadThirdScene()
+    {       
+        SceneManager.LoadScene(3);
+        Debug.Log("trying to load");
+    }
     public void APPQUIT()
     {
         Application.Quit();
