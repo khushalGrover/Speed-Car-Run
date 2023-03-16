@@ -14,8 +14,7 @@ public class FuelSystem : MonoBehaviour
     [SerializeField] float currentFuel = 100f;
     [SerializeField] float reduceRate = 0.1f;
     [SerializeField] float fillRate = 0.5f;
-   
-    
+    // [SerializeField] GameObject expolostionPrefab;
     public canvasManager canvases;
     
 
@@ -38,6 +37,12 @@ public class FuelSystem : MonoBehaviour
             // Refill fuel
             fueling();
         }
+        // else if (collisionInfo.collider.tag == "obstacles")
+        // {
+        //     Instantiate(expolostionPrefab, transform.position, transform.rotation);
+            
+        //     Debug.Log("Collided!!!");
+        // }
     }
 
     void FuelReduceSystem()

@@ -139,7 +139,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 15-03-2023
+  bundleVersion: 16-03-2023
   preloadedAssets:
   - {fileID: 11400000, guid: 8ccd8caf5b481ac0d8f8bb974ebd3aa1, type: 2}
   metroInputSource: 0

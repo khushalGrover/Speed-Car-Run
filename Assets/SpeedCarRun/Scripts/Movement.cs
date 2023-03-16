@@ -19,9 +19,8 @@ public class Movement : MonoBehaviour
     [SerializeField] float backwardLimit = -1.4f;
     [SerializeField] float maxSpeed = 25f;
     [SerializeField] float minSpeed = 2f;
+    [SerializeField] GameObject BoostFlamesPrefab;
 
-
-    [SerializeField] int b = 0;
 
     public float touchPosX;
     public float touchPosZ;
@@ -38,7 +37,12 @@ public class Movement : MonoBehaviour
         {
             checkInput();
             inputPC();
-            transform.localPosition = new Vector3(Mathf.Clamp(touchPosX, leftLimit, rightLimit), 0.17f, Mathf.Clamp(touchPosZ, backwardLimit, forwardtLimit));
+            transform.localPosition = new Vector3(Mathf.Clamp(touchPosX, leftLimit, rightLimit), 0.24f, Mathf.Clamp(touchPosZ, backwardLimit, forwardtLimit));
+        }
+        else 
+        {
+            cinemachineDollyCart.m_Speed = 0f;
+            BoostFlamesPrefab.transform.localScale = new Vector3(0, 0, 0);
         }
 
     }
@@ -53,24 +57,31 @@ public class Movement : MonoBehaviour
             float movDirZ = Input.GetAxis("Mouse Y");
             touchPosX += movDirX * controlSpeed * Time.fixedDeltaTime;
             touchPosZ += movDirZ * controlSpeed * Time.fixedDeltaTime;
-            // currentSpeed = inputConvert(transform.localPosition.z, backwardLimit, forwardtLimit, minSpeed, maxSpeed);
+
+            // changing local position of car to boosting and breaking effect of car base on fingure screen position 
             cinemachineDollyCart.m_Speed = inputConvert(transform.localPosition.z, backwardLimit, forwardtLimit, minSpeed, maxSpeed);
-            // Debug.Log(cinemachineDollyCart.m_Speed);
+
+            // changing size of boost flames base on car local positions
+            BoostFlamesPrefab.transform.localScale = new Vector3(1, 1,inputConvert(transform.localPosition.z, 0f, forwardtLimit, 0, 1));
+            
         }
 
         
 
-        // if(transform.localPosition.z == forwardtLimit)
-        // {
-        //     currentSpeed = inputConvert(transform.localPosition.z, backwardLimit, forwardtLimit, minSpeed, maxSpeed);
-        // }
-        // else if (transform.localPosition.z == backwardLimit)
-        // {
-        //     Debug.Log("Braking!!");
-        // }
-        // else {
-        //     Debug.Log("Normal");
-        // }
+        if(transform.localPosition.z <= 0)
+        {
+            // seting size to zero if not boosting i.e car local z position is less than zero
+            BoostFlamesPrefab.transform.localScale = new Vector3(0,0,0);
+           
+            
+        }
+        else if (transform.localPosition.z == backwardLimit)
+        {
+            Debug.Log("Braking!!");
+        }
+        else {
+            Debug.Log("Normal");
+        }
 
 
     }
