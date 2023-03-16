@@ -463,6 +463,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 482783359}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &152958562 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 623231847, guid: 3e414f995cbbfbf8a96a34c39fdc677d,
+    type: 3}
+  m_PrefabInstance: {fileID: 482783359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &209240336
 GameObject:
   m_ObjectHideFlags: 0
@@ -1420,6 +1426,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a31ad0c1a822c67789d206820549ac53, type: 3}
+--- !u!1 &475183466 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1681195826840497027, guid: 3e414f995cbbfbf8a96a34c39fdc677d,
+    type: 3}
+  m_PrefabInstance: {fileID: 482783359}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &482783359
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1431,6 +1443,14 @@ PrefabInstance:
       propertyPath: reduceRate
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 1253622923, guid: 3e414f995cbbfbf8a96a34c39fdc677d, type: 3}
+      propertyPath: Cameras.Array.data[0]
+      value: 
+      objectReference: {fileID: 152958562}
+    - target: {fileID: 1253622923, guid: 3e414f995cbbfbf8a96a34c39fdc677d, type: 3}
+      propertyPath: Cameras.Array.data[3]
+      value: 
+      objectReference: {fileID: 475183466}
     - target: {fileID: 1681195825456695896, guid: 3e414f995cbbfbf8a96a34c39fdc677d,
         type: 3}
       propertyPath: m_RootOrder
@@ -1591,6 +1611,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5333938078319193444, guid: 3e414f995cbbfbf8a96a34c39fdc677d,
+        type: 3}
+      propertyPath: cinemachineDollyCart
+      value: 
+      objectReference: {fileID: 698553450}
     - target: {fileID: 8691550675980681729, guid: 3e414f995cbbfbf8a96a34c39fdc677d,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -1855,6 +1880,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &698553450 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1681195825456695897, guid: 3e414f995cbbfbf8a96a34c39fdc677d,
+    type: 3}
+  m_PrefabInstance: {fileID: 482783359}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a9c787e5d1bbf48a389834c4a9641c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &751845182
 Mesh:
   m_ObjectHideFlags: 0
@@ -2346,6 +2383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1040227201}
   - component: {fileID: 1040227202}
+  - component: {fileID: 1040227203}
   m_Layer: 0
   m_Name: Directional Light (1)
   m_TagString: Untagged
@@ -2430,6 +2468,26 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &1040227203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040227200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Version: 1
+  m_UsePipelineSettings: 1
+  m_AdditionalLightsShadowResolutionTier: 2
+  m_LightLayerMask: 1
+  m_CustomShadowLayers: 0
+  m_ShadowLayerMask: 1
+  m_LightCookieSize: {x: 1, y: 1}
+  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!43 &1107537281
 Mesh:
   m_ObjectHideFlags: 0
