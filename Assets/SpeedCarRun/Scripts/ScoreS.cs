@@ -35,10 +35,10 @@ public class ScoreS : MonoBehaviour
         PlayerData data = SaveSystem.LoadPlayer();
 
         highNum = data.highNum;
-        highText.text = "High Score: " + highNum;
+        highText.text = "" + highNum;
 
         coinCollected = data.coinCollected;
-        CoinText.text = "Coin: " + coinCollected.ToString("");
+        CoinText.text = coinCollected.ToString("");
 
     }
 
@@ -46,13 +46,13 @@ public class ScoreS : MonoBehaviour
     void LateUpdate()
     {
         scoreNum = Convert.ToInt32(playerPrefab.position.z);
-        scoreText.text = "Score: " + scoreNum.ToString("0");
-        CoinText.text =  "Coin: " + coinCollected.ToString("");
+        scoreText.text = "" + scoreNum.ToString("0");
+        CoinText.text =  "" + coinCollected.ToString("");
         if(highNum < scoreNum)
         {
             
             highNum = scoreNum;
-            highText.text = "High Score: "  + scoreNum;
+            highText.text = ""  + scoreNum;
             
             
         }

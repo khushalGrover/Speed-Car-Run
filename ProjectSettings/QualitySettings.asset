@@ -4,7 +4,7 @@
 QualitySettings:
   m_ObjectHideFlags: 0
   serializedVersion: 5
-  m_CurrentQuality: 1
+  m_CurrentQuality: 2
   m_QualitySettings:
   - serializedVersion: 2
     name: Very Low
@@ -113,9 +113,9 @@ QualitySettings:
     asyncUploadBufferSize: 16
     asyncUploadPersistentBuffer: 1
     resolutionScalingFixedDPIFactor: 1
-    customRenderPipeline: {fileID: 0}
-    excludedTargetPlatforms:
-    - Android
+    customRenderPipeline: {fileID: 11400000, guid: e7767a5589f85722c97f2932b3c009d9,
+      type: 2}
+    excludedTargetPlatforms: []
   - serializedVersion: 2
     name: High
     pixelLightCount: 2
@@ -229,4 +229,5 @@ QualitySettings:
     - Android
   m_PerPlatformDefaultQuality:
     Android: 1
+    Server: 0
     Standalone: 2
