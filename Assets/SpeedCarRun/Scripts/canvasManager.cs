@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
 public class canvasManager : MonoBehaviour
 {
     public static canvasManager instance;
@@ -59,6 +58,11 @@ public class canvasManager : MonoBehaviour
     {       
         SceneManager.LoadScene(2);
     }
+    public void loadThirdScene()
+    {       
+        SceneManager.LoadScene(3);
+        Debug.Log("trying to load");
+    }
     public void APPQUIT()
     {
         Application.Quit();
@@ -83,8 +87,7 @@ public class canvasManager : MonoBehaviour
         scoreCanvas.SetActive(true);
         MoibleInputCanvas.SetActive(false);
         gameOverCanvas.SetActive(true);
-        
-        Time.timeScale = 0f;
+        Time.timeScale = 0.8f;
 
     }
 

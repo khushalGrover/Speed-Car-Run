@@ -28,6 +28,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.59000015}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -44,8 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c25f4f1916beea9d8be528a7ff9d1ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseCanvas: {fileID: 2400283175829639804, guid: 919a1d365433e677191ef76a1d63fd60,
-    type: 3}
+  pauseCanvas: {fileID: 0}
   optionCanvas: {fileID: 0}
   scoreCanvas: {fileID: 0}
   MoibleInputCanvas: {fileID: 0}

@@ -18,8 +18,10 @@ public class wallCOLLideing : MonoBehaviour
         if(collisionInfo.collider.tag == "Player")
         {
             Debug.Log("Game Over");
+            
             Movement.isAlive = false;
             canvases.gameOver();
+
         }
     }
 
