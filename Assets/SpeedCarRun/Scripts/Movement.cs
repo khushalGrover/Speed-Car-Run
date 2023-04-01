@@ -20,6 +20,8 @@ public class Movement : MonoBehaviour
     [SerializeField] float maxSpeed = 25f;
     [SerializeField] float minSpeed = 2f;
     [SerializeField] GameObject BoostFlamesPrefab;
+    [SerializeField] SpriteRenderer BoostEffectUI;
+    [SerializeField] Color BoostEffect_Color;
 
 
     public float touchPosX;
@@ -28,9 +30,8 @@ public class Movement : MonoBehaviour
     void Start()
     {
         isAlive = true;
-       
+        BoostEffect_Color.a = 0f;
     }
-
     void Update()
     {       
         if(isAlive)
@@ -38,11 +39,14 @@ public class Movement : MonoBehaviour
             checkInput();
             inputPC();
             transform.localPosition = new Vector3(Mathf.Clamp(touchPosX, leftLimit, rightLimit), 0.24f, Mathf.Clamp(touchPosZ, backwardLimit, forwardtLimit));
+            BoostEffectUI.color = BoostEffect_Color;
         }
         else 
         {
             cinemachineDollyCart.m_Speed = 0f;
             BoostFlamesPrefab.transform.localScale = new Vector3(0, 0, 0);
+            BoostEffect_Color.a = 0f;
+
         }
 
     }
@@ -63,7 +67,7 @@ public class Movement : MonoBehaviour
 
             // changing size of boost flames base on car local positions
             BoostFlamesPrefab.transform.localScale = new Vector3(1, 1,inputConvert(transform.localPosition.z, 0f, forwardtLimit, 0, 1));
-            
+            BoostEffect_Color.a =  inputConvert(transform.localPosition.z, 1.5f, forwardtLimit, 0, 1);
         }
 
         
