@@ -6,12 +6,12 @@ using Cinemachine;
 
 public class Movement : MonoBehaviour
 {
-    
+
     public static bool isAlive = true;
-    
+
     public bool isTouching = false;
     public CinemachineDollyCart cinemachineDollyCart;
-   
+
     [SerializeField] float controlSpeed;
     [SerializeField] float leftLimit = -1.4f;
     [SerializeField] float rightLimit = 1.4f;
@@ -33,29 +33,26 @@ public class Movement : MonoBehaviour
         BoostEffect_Color.a = 0f;
     }
     void Update()
-    {       
-        if(isAlive)
+    {
+        if (isAlive)
         {
             checkInput();
             inputPC();
             transform.localPosition = new Vector3(Mathf.Clamp(touchPosX, leftLimit, rightLimit), 0.24f, Mathf.Clamp(touchPosZ, backwardLimit, forwardtLimit));
             BoostEffectUI.color = BoostEffect_Color;
         }
-        else 
+        else
         {
             cinemachineDollyCart.m_Speed = 0f;
             BoostFlamesPrefab.transform.localScale = new Vector3(0, 0, 0);
             BoostEffect_Color.a = 0f;
-
         }
-
     }
-
 
 
     void inputPC()
     {
-       if(isTouching )
+        if (isTouching)
         {
             float movDirX = Input.GetAxis("Mouse X");
             float movDirZ = Input.GetAxis("Mouse Y");
@@ -66,24 +63,25 @@ public class Movement : MonoBehaviour
             cinemachineDollyCart.m_Speed = inputConvert(transform.localPosition.z, backwardLimit, forwardtLimit, minSpeed, maxSpeed);
 
             // changing size of boost flames base on car local positions
-            BoostFlamesPrefab.transform.localScale = new Vector3(1, 1,inputConvert(transform.localPosition.z, 0f, forwardtLimit, 0, 1));
-            BoostEffect_Color.a =  inputConvert(transform.localPosition.z, 1.5f, forwardtLimit, 0, 1);
+            BoostFlamesPrefab.transform.localScale = new Vector3(1, 1, inputConvert(transform.localPosition.z, 0f, forwardtLimit, 0, 1));
+            BoostEffect_Color.a = inputConvert(transform.localPosition.z, 1.5f, forwardtLimit, 0, 1);
         }
 
-        
 
-        if(transform.localPosition.z <= 0)
+
+        if (transform.localPosition.z <= 0)
         {
             // seting size to zero if not boosting i.e car local z position is less than zero
-            BoostFlamesPrefab.transform.localScale = new Vector3(0,0,0);
-           
-            
+            BoostFlamesPrefab.transform.localScale = new Vector3(0, 0, 0);
+
+
         }
         else if (transform.localPosition.z == backwardLimit)
         {
             Debug.Log("Braking!!");
         }
-        else {
+        else
+        {
             Debug.Log("Normal");
         }
 
@@ -92,19 +90,19 @@ public class Movement : MonoBehaviour
 
     void checkInput()
     {
-        if(Input.GetMouseButton(0)) 
+        if (Input.GetMouseButton(0))
         {
-            isTouching=true;
+            isTouching = true;
         }
-        else 
+        else
         {
-            isTouching=false;
+            isTouching = false;
         }
     }
 
-    float inputConvert(float num, float in_min, float in_max, float out_min, float out_max )
+    float inputConvert(float num, float in_min, float in_max, float out_min, float out_max)
     {
         return (num - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
     }
-     
+
 }
