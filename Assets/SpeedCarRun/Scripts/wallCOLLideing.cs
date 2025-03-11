@@ -5,9 +5,7 @@ using UnityEngine;
 public class wallCOLLideing : MonoBehaviour
 {
     public canvasManager canvases;
-    
 
-    // Start is called before the first frame update
     void Awake()
     {
         canvases = GameObject.FindObjectOfType<canvasManager>();
@@ -17,7 +15,6 @@ public class wallCOLLideing : MonoBehaviour
     {
         if(collisionInfo.collider.tag == "Player")
         {
-            Debug.Log("Game Over");
             
             Movement.isAlive = false;
             canvases.gameOver();
