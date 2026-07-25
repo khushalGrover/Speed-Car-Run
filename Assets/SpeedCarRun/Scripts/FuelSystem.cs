@@ -14,8 +14,7 @@ public class FuelSystem : MonoBehaviour
     [SerializeField] float currentFuel = 100f;
     [SerializeField] float reduceRate = 0.1f;
     [SerializeField] float fillRate = 0.5f;
-   
-    
+    // [SerializeField] GameObject expolostionPrefab;
     public canvasManager canvases;
     
 
@@ -38,16 +37,22 @@ public class FuelSystem : MonoBehaviour
             // Refill fuel
             fueling();
         }
+        // else if (collisionInfo.collider.tag == "obstacles")
+        // {
+        //     Instantiate(expolostionPrefab, transform.position, transform.rotation);
+            
+        //     Debug.Log("Collided!!!");
+        // }
     }
 
     void FuelReduceSystem()
     {
-        fuelDisplay.text = "Fuel:" + currentFuel.ToString("0");
+        fuelDisplay.text = currentFuel.ToString("0");
         slider.value = currentFuel;
 
-        if(currentFuel > 0)
+        if(currentFuel > 0 && Movement.isAlive == true)
         {
-            currentFuel -= reduceRate;
+            currentFuel -= reduceRate * Time.deltaTime;
         }
         else if(currentFuel <= 0)
         {
@@ -61,15 +66,15 @@ public class FuelSystem : MonoBehaviour
 
     void fueling()
     {
-        if(currentFuel < 99)
+        if(currentFuel <= (99-fillRate))
         {
-            //currentFuel += fillRate;
-            currentFuel = 100;
+            currentFuel += fillRate;
+            // currentFuel = 100;
         }
-        else if(currentFuel >= 100)
+        else 
         {
             //already full
-            Debug.Log("fuel tank is full");
+            // Debug.Log("fuel tank is full");
             currentFuel = 100;
         }
     }
